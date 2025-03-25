@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Return</title>
+</head>
+<body>
+    <h1>Add a Return</h1>
+    <form method="POST" enctype="multipart/form-data">
+        <label>Order ID:</label><br>
+        <input type="text" name="order_id" required><br><br>
+
+        <label>Item Barcode:</label><br>
+        <input type="text" name="item_barcode" required><br><br>
+
+        <label>SKU:</label><br>
+        <input type="text" name="sku" required><br><br>
+
+        <label>Condition:</label><br>
+        <select name="condition" required>
+            <option value="Sellable">Sellable</option>
+            <option value="Damaged">Damaged</option>
+        </select><br><br>
+
+        <label>Damage Description (if damaged):</label><br>
+        <input type="text" name="damage_description"><br><br>
+
+        <label>Return Reason:</label><br>
+        <input type="text" name="return_reason"><br><br>
+
+        <label>Order Date:</label><br>
+        <input type="date" name="order_date"><br><br>
+
+        <label>Price (AED):</label><br>
+        <input type="number" name="price" step="0.01"><br><br>
+
+        <label>LPN (Optional):</label><br>
+        <input type="text" name="lpn"><br><br>
+
+        <label>Box Label (Optional):</label><br>
+        <input type="text" name="box_label"><br><br>
+
+        <label>Warehouse Location:</label><br>
+        <input type="text" name="warehouse_location" required><br><br>
+
+        <label>Staff Name:</label><br>
+        <input type="text" name="staff_name" required><br><br>
+
+        <label>Platform:</label><br>
+        <select name="platform" required>
+            <option value="Amazon">Amazon</option>
+            <option value="Noon">Noon</option>
+        </select><br><br>
+
+        <label>Upload Images (1 required, up to 10):</label><br>
+        <input type="file" name="images" required><br>
+        {% for i in range(2, 11) %}
+            <input type="file" name="images"><br>
+        {% endfor %}
+
+        <br><button type="submit">Submit</button>
+    </form>
+</body>
+</html>
